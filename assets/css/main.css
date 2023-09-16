@@ -106,7 +106,7 @@ address {
 /* ============ Navbar ========= */
 header {
   width: 100%;
-  background-color: #101528;
+  background-color: #11202f;
 }
 
 nav {
@@ -134,7 +134,7 @@ nav {
 }
 .main-nav.active {
   left: 0;
-  background-color: rgb(16, 20, 40, 0.95);
+  background-color: #11202f;
   box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
 }
 .main-nav a {
@@ -142,6 +142,11 @@ nav {
   display: inline-block;
   margin: 16px 32px;
   text-decoration: none;
+}
+.login-link{
+  margin-left: auto;
+  margin-right: 20px;
+  z-index: 3;
 }
 
 .logo {
@@ -242,8 +247,12 @@ nav {
   color: white;
   background-image: linear-gradient(180deg, #122634 3.22%, #223542 40.73%);
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 0 0;
 }
+.info .container{
+  padding-bottom: 60px;
+}
+
 .info-btn{
   background-color: #71BBC4;
   font-weight: 800;
@@ -265,36 +274,36 @@ nav {
   border-radius: 10px;
   margin: 24px 0;
 }
-.rank-data{
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 50px 1fr 1fr;
+/* ======= Payout ========= */
+.payout{
+  padding-bottom: 60px;
 }
-.rank-data-list{
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  padding-left: 0;
-  padding: 20px 10px 20px;
-  list-style-type: none;
-  border-radius: 14px;
-  border: 1px solid #71bbc4;
+.payout-list{
+  list-style: none;
+  padding: 0;
 }
-.rank-data-list:first-child{
-  color: white;
-  background-color: #71BBC4;
-
-
+.payout-list p{
+  max-width: initial;
+  line-height: 2;
+  margin-top: 0;
 }
-.rank-data-list li{
-  padding: 20px 0;
+.payout-list li{
+  max-width: 890px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 1em;
 }
-.rank-data-list li:not(:last-child){
-  border-bottom: 1px solid rgba(0,0,0,0.3);
-}
-
-.rank-data-list li:first-child{
-  height: 90px;
+.payout-list li::before{
+  content: "•";
+  font-size: 18px;
+  position: absolute;
+  top: 4px;
+  color: #71bbc4;
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1em;
 }
 /* ============ FAQS ========= */
 .faqs {
@@ -309,11 +318,7 @@ nav {
 .faqs-wrapper {
   padding: 50px 0 60px;
 }
-.faqs__text {
-  text-align: center;
-  line-height: 2;
-  margin-bottom: 2em;
-}
+
 .faq__item {
   margin: 0 20px;
 }
@@ -392,9 +397,8 @@ nav {
 }
 .footer-note {
   padding: 40px 0;
-  margin: 0 15px;
+  margin: 0 auto;
   max-width: 890px;
-  margin-right: auto;
 }
 
 /* ========== Footer ======== */
@@ -415,6 +419,7 @@ nav {
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 60px 0 50px;
 }
@@ -437,6 +442,7 @@ nav {
   display: flex;
   gap: 20px;
   align-items: center;
+  justify-content: center;
   line-height: 1.7;
 }
 .footer-logo {
@@ -487,7 +493,7 @@ nav {
     margin-right: auto;
   }
   .main-nav a {
-    margin: 0 32px;
+    margin: 0 10px;
   }
   .main-nav li:last-child a {
     margin-right: 0;
@@ -501,53 +507,15 @@ nav {
     margin: -100px 100px 60px;
   }
   /* ========= Info ======= */
+  .info p{
+    line-height: 1.8;
+  }
   .info-banner{
     padding: 40px;
   }
   .info p{
     margin: 28px auto;
     text-align: center;
-  }
-  /* === Rank == */
-  .rank-data{
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    padding: 20px 0 0;
-  }
-
-  .rank-data-list{
-    font-size: 16px;
-    padding: 12px 14px;
-    padding-right: 0;
-    display: grid;
-    align-items: center;
-    grid-template-columns:25% repeat(8,1fr);
-    border: 1px solid #71BBC4;
-    border-radius: 14px;
-  }
-  .rank-data-heading{
-    font-size: 22px;
-    line-height: 41px;
-  }
-  .rank-data-list li:not(:last-child){
-    border-bottom-width: 0;
-    border-right: 1px solid rgba(0,0,0,0.3);
-  }
-  .rank-data-list:not(:first-child) li{
-    border-color: #71bbc4;
-
-  }
-
-
-  .rank-data-list li{
-    padding: 10px 0;
-  }
-
-  .rank-data-list li:first-child{
-    height: initial;
-    text-align: left;
-    padding: 0;
   }
 
   /* ============ FAQS ========= */
@@ -583,8 +551,10 @@ nav {
   .footer-links {
     flex-direction: row;
     justify-content: space-evenly;
+    padding-top: 60px;
   }
   .footer-nav {
+    padding-top: 0;
     padding-bottom: 20px;
   }
   .footer-info {
